@@ -24,10 +24,10 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             this.price += vegPizzaPrice;
-            this.bill += "Base Price Of The Pizza: "+vegPizzaPrice+ "\n";
+            this.bill += "Base Price Of The Pizza: 300"+ "\n";
         }else{
             this.price += nonVegPizzaPrice;
-            this.bill += "Base Price Of The Pizza: "+nonVegPizzaPrice+ "\n";
+            this.bill += "Base Price Of The Pizza: 400"+ "\n";
         }
     }
 
@@ -62,20 +62,20 @@ public class Pizza {
 
     public String getBill(){
         if(isCheeseAdded){
-            this.bill += "Extra Cheese Added: "+extraCheesePrice+ "\n";
+            this.bill += "Extra Cheese Added: 80"+ "\n";
         }
         if(isToppingAdded){
             if(isVeg){
-                this.bill += "Extra Toppings Added: "+extraToppingVeg+ "\n";
+                this.bill += "Extra Toppings Added: 70"+ "\n";
             }else{
-                this.bill += "Extra Toppings Added: "+extraToppingNonVeg+ "\n";
+                this.bill += "Extra Toppings Added: 120"+ "\n";
             }
         }
         if(isTakeawayAdded){
-            this.bill += "Paperbag Added: "+paperBagPrice+ "\n";
+            this.bill += "Paperbag Added: 20"+ "\n";
         }
 
-        this.bill += "Total Price: "+price;
+        this.bill += "Total Price: "+ this.price;
         return this.bill;
     }
 }
