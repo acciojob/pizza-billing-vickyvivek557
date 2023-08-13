@@ -2,7 +2,7 @@ package com.driver;
 
 public class Pizza {
 
-    private boolean isVeg; // if its a veg pizza (isVeg = true) else if non veg (isVeg=false)
+    private boolean isVeg;
 
     private String bill="";
     private int price=0;
@@ -38,7 +38,6 @@ public class Pizza {
     public void addExtraCheese(){
         if(isCheeseAddedOnce == false){
             price = price + extraCheesePrice;
-
             isCheeseAddedOnce = true;
         }
     }
@@ -77,7 +76,7 @@ public class Pizza {
             this.bill = this.bill + "Paperbag Added: " + TakeAwayPrice +"\n";
         }
 
-        this.bill = this.bill + "Total price: " + this.price;
+        this.bill = this.bill + "Total Price: " + this.price;
 
         return this.bill;
     }
