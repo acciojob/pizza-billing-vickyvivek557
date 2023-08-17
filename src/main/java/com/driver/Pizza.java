@@ -62,31 +62,28 @@ public class Pizza {
 
 
 
-    private String generatetBill(){
-        if(isCheeseAddedOnce==true){
-            this.bill = this.bill + "Extra Cheese Added: " + extraCheesePrice + "\n";
-        }
-
-        if(isToppingsAddedOnce){
-            if(isVeg == true){
-                this.bill = this.bill + "Extra Toppings Added: " + extraToppingsVegPrice +"\n";
-            } else {
-                this.bill = this.bill + "Extra Toppings Added: " + extraToppingsNonVegPrice +"\n";
+    public String getBill(){
+        if(!isBillGenerated){
+            if(isCheeseAddedOnce==true){
+                this.bill = this.bill + "Extra Cheese Added: " + extraCheesePrice + "\n";
             }
-        }
 
-        if(isTakeAwayAdded){
-            this.bill = this.bill + "Paperbag Added: " + TakeAwayPrice +"\n";
-        }
+            if(isToppingsAddedOnce){
+                if(isVeg == true){
+                    this.bill = this.bill + "Extra Toppings Added: " + extraToppingsVegPrice +"\n";
+                } else {
+                    this.bill = this.bill + "Extra Toppings Added: " + extraToppingsNonVegPrice +"\n";
+                }
+            }
 
-        this.bill = this.bill + "Total Price: " + this.price+ "\n";
-        isBillGenerated = true;
+            if(isTakeAwayAdded){
+                this.bill = this.bill + "Paperbag Added: " + TakeAwayPrice +"\n";
+            }
+
+            this.bill = this.bill + "Total Price: " + this.price+ "\n";
+            isBillGenerated = true;
+        }
         return this.bill;
     }
-    public String getBill(){
-        if(isBillGenerated == false){
-            return generatetBill();
-        }
-        return "";
-    }
+
 }
